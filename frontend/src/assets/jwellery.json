@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "Maharani Kankans",
+    "review": 4.7,
+    "karat": "22K",
+    "gold_weight": "36 grams",
+    "category": "bangles",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw66967a69/images/hi-res/516061VAJ1A00_1.jpg?sw=640&sh=640",
+    "price": 35000,
+    "description": "Elevate your traditional wardrobe with the Royal Gold Bangles Set, meticulously crafted from 22K hallmarked gold. Weighing a substantial 36 grams, each bangle features intricate hand-engraved floral and paisley motifs that reflect centuries-old Indian craftsmanship. The high-polish finish enhances the elaborate detailing and catches light beautifully, ensuring your hands stand out at weddings, festivals, and family gatherings alike. Despite its weight, the ergonomic design ensures a comfortable fit for extended wear, making it perfect for both brides and seasoned jewelry aficionados. The set pairs seamlessly with silk sarees, lehengas, or even contemporary Indo-western outfits, offering versatile styling options. These bangles are not just accessories but heirloom-quality pieces designed to be treasured across generations. Packaged in a luxurious velvet-lined box, this set makes for an unforgettable gift, symbolizing prosperity, tradition, and timeless elegance. Whether you’re celebrating a milestone or simply indulging in fine jewelry, the Royal Gold Bangles Set is a statement of luxury and heritage."
+  },
+  {
+    "id": 2,
+    "title": "Royal Gorget",
+    "review": 4.9,
+    "karat": "18K",
+    "gold_weight": "28 grams",
+    "category": "necklace",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwdc0e6e0c/images/hi-res/5110692ZWAAA00_3.jpg?sw=640&sh=640",
+    "price": 185000,
+    "description": "The Classic Gold Necklace is the epitome of refined elegance, designed for the discerning woman who values timeless beauty. Crafted from 18K certified hallmarked gold and weighing 28 grams, this necklace features an exquisite arrangement of round-cut, ethically sourced diamonds that shimmer with every movement. The symmetrical design showcases a graduated diamond pattern, culminating in a statement centerpiece that gracefully adorns the collarbone. Ideal for gala dinners, weddings, or special celebrations, its versatile silhouette complements both Western evening gowns and traditional Indian attire. The secure lobster-clasp closure ensures comfortable wear, while the precision setting keeps each diamond snugly in place. Presented in a deluxe leatherette jewelry box, this piece makes an unforgettable gift for anniversaries, birthdays, or bridal trousseaus. Beyond its aesthetic appeal, the Classic Diamond Necklace is designed for longevity and daily wear, allowing you to cherish its sparkle for years to come. Embrace sophistication and let this stunning necklace become the highlight of your jewelry collection."
+  },
+  {
+    "id": 3,
+    "title": "Chandlier Earrings",
+    "review": 4.5,
+    "karat": "22K",
+    "gold_weight": "12 grams",
+    "category": "earrings",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwc8cd8a41/images/hi-res/51D5B1JHOABA00_1.jpg?sw=640&sh=640",
+    "price": 54000,
+    "description": "Introducing the Chandlier Earrings, a harmonious blend of classic elegance and modern design. Crafted in 22K hallmarked gold with a total weight of 12 grams, these earrings feature lustrous freshwater pearls suspended from delicately twisted gold hooks. The gold detailing includes a subtle rope motif that adds texture and depth, accentuating the natural sheen of the pearls. Lightweight yet substantial enough to feel luxurious, these earrings are perfect for daytime events, office wear, or intimate evening gatherings. Their versatile design pairs effortlessly with both western dresses and traditional Indian outfits, making them an essential accessory for any jewelry wardrobe. Each pair is finished with secure butterfly backings to ensure stability and comfort. Presented in an elegant silk-lined jewelry box, these Pearl Drop Earrings make a thoughtful gift for graduations, birthdays, or anniversaries. Embrace the timeless allure of pearls combined with expert goldsmithing—these earrings promise to elevate your ensemble and become a cherished staple for years to come."
+  },
+  {
+    "id": 4,
+    "title": "Lotus Bloom Ring",
+    "review": 4.2,
+    "karat": "18K",
+    "gold_weight": "4 grams",
+    "category": "rings",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw908fe0fa/images/hi-res/511920FCMAA00.jpg?sw=640&sh=640",
+    "price": 15000,
+    "description": "Discover understated elegance with our Minimalist Gold Ring, crafted from 18K hallmarked gold and weighing a delicate 4 grams. This sleek band features a gently domed surface and a high-polish finish that reflects light softly, creating a subtle shimmer on the finger. Designed for daily wear, its slim profile sits comfortably against the skin without compromising on durability. The unadorned aesthetic makes it an ideal stacking piece—mix and match with other bands or wear solo for a refined statement. Whether paired with casual denim, office attire, or evening wear, this ring adds a touch of sophistication without overpowering your look. The hypoallergenic gold alloy ensures compatibility with sensitive skin, while the precise sizing guarantees a snug yet comfortable fit. Perfect as a gift for milestones like graduations or promotions, this Minimalist Gold Ring is a timeless token of affection. Packaged in a minimalist kraft gift box, it arrives ready to delight and inspire everyday elegance."
+  },
+  {
+    "id": 5,
+    "title": "Heritage Bridal Necklace",
+    "review": 5.0,
+    "karat": "22K",
+    "gold_weight": "42 grams",
+    "category": "necklace",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwa78ace0e/images/hi-res/5132202PL1BA00_1.jpg?sw=640&sh=640",
+    "price": 215000,
+    "description": "Celebrate tradition and grandeur with the Heritage Bridal Necklace, a masterpiece inspired by South Indian temple jewelry. Forged from 22K hallmarked gold and weighing 42 grams, this regal piece features a series of intricately carved motifs depicting temple deities, floral garlands, and peacocks. Each gold element is polished to perfection, creating a radiant glow that complements bridal attire and festive silk sarees. The necklace’s curved design hugs the neckline beautifully, while the traditional gold beads add depth and dimension. Securely fastened with an adjustable hook-and-eye closure, it offers flexibility for varied neck sizes. Whether you’re the bride seeking a statement heirloom or a wedding guest looking to honor cultural heritage, this necklace commands attention and respect. It’s presented in a handcrafted wooden box with velvet lining, making it an exquisite gift for weddings, anniversaries, or family celebrations. Embrace the legacy of ancient craftsmanship and let the Heritage Bridal Necklace become the crowning jewel of your special day."
+  },
+  {
+    "id": 6,
+    "title": "Floral Motif Gold Earrings",
+    "review": 4.4,
+    "karat": "22K",
+    "gold_weight": "10 grams",
+    "category": "earrings",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw1f64c5d8/images/hi-res/510895DYAAGA00_1.jpg?sw=640&sh=640",
+    "price": 46000,
+    "description": "The Floral Motif Gold Earrings are a celebration of nature’s beauty rendered in 22K hallmarked gold. Weighing a graceful 10 grams, each earring features a layered flower design with lifelike petal detailing and a subtle hammered texture on the outer edges. The three-dimensional petals catch and reflect light, creating a dynamic shimmer as you move. Lightweight yet substantial enough to convey luxury, these earrings are secured with robust push-back posts for all-day comfort. Ideal for garden parties, festive occasions, or casual brunches, they pair seamlessly with floral dresses, sarees, or tailored suits. The botanical inspiration adds a fresh, feminine touch to your jewelry collection, making these earrings a versatile staple. Packaged in a silk-lined gift box with a botanical illustration insert, the Floral Motif Gold Earrings make a thoughtful present for birthdays, Mother’s Day, or bridal showers. Embrace the elegance of floral artistry and let these earrings bloom in your ensemble."
+  },
+  {
+    "id": 7,
+    "title": "Dual Toned Gold Bracelet",
+    "review": 4.6,
+    "karat": "22K",
+    "gold_weight": "40 grams",
+    "category": "bangles",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwcbc20efb/images/hi-res/513018BTSAA00.jpg?sw=640&sh=640",
+    "price": 117000,
+    "description": "Make a bold statement with our Dual Toned Gold Bracelet, crafted from 22K hallmarked gold and weighing a dramatic 40 grams. These robust bangles feature a smooth, domed exterior and a satin finish interior for an ultra-comfortable fit. The minimalistic silhouette emphasizes the pure brilliance of the gold, creating a contemporary aesthetic that stands out whether stacked or worn alone. Their substantial width exudes confidence and pairs perfectly with evening gowns, cocktail dresses, or modern indo-western ensembles. Despite their heft, the ergonomic design ensures they slide on and off effortlessly while maintaining a secure fit. Each set of two bangles is presented in a textured linen jewelry pouch with a magnetic wooden closure, making them perfect for gifting. Ideal for milestone celebrations or as a luxurious treat for yourself, the Chunky Bangle Bracelets blend modern design with timeless craftsmanship, promising to be a signature piece in your jewelry collection."
+  },
+  {
+    "id": 8,
+    "title": "Entrancing Leaf Pattern Gold Finger Ring",
+    "review": 4.8,
+    "karat": "18K",
+    "gold_weight": "6 grams",
+    "category": "rings",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw5d1d4f38/images/hi-res/510784FNAAA00_2.jpg?sw=640&sh=640",
+    "price": 38000,
+    "description": "Experience the perfect fusion of sparkle and sophistication with our Entrancing Leaf Pattern Gold Finger Ring. Crafted in 18K hallmarked gold and weighing a refined 6 grams, this ring showcases a sleek band encrusted with a row of brilliant round-cut diamonds. The channel setting ensures each stone sits flush and secure, creating a continuous line of fire and brilliance around the finger. Its modern design lends itself to both casual and formal wear, making it an ideal choice for anniversaries, engagements, or daily luxury. The ring’s understated elegance allows it to stack harmoniously with other bands or shine on its own as a statement piece. Expertly polished to a mirror finish, it reflects light beautifully while the hypoallergenic gold alloy makes it suitable for sensitive skin. Packaged in a premium faux-leather box with satin lining, the Diamond Studded Gold Ring arrives ready to dazzle and delight."
+  },
+  {
+    "id": 9,
+    "title": "Graceful Choker Necklace",
+    "review": 4.7,
+    "karat": "18K",
+    "gold_weight": "24 grams",
+    "category": "necklace",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw1e57ad6f/images/hi-res/51W1D12GZ1BA00_1.jpg?sw=640&sh=640",
+    "price": 160000,
+    "description": "The Graceful Choker Necklace is a contemporary interpretation of classic elegance, crafted from 18K hallmarked gold and weighing 24 grams. Its flat, articulated design contours smoothly along the neckline, offering both flexibility and a sleek, polished appearance. The high-shine surface is interrupted by subtle, laser-etched lines that catch light at different angles, adding visual depth and movement. Ideal for both formal events and upscale everyday wear, this choker pairs beautifully with V-neck dresses, strapless gowns, or tailored blazers. The discreet slide clasp ensures a secure fit while maintaining the necklace’s streamlined look. Presented in a minimalist matte-black jewelry box with a velvet insert, the Graceful Choker Necklace is perfect as a thoughtful gift for milestones such as graduations, promotions, or anniversaries. Embrace modern luxury with this sophisticated piece that transitions effortlessly from day to night."
+  },
+  {
+    "id": 10,
+    "title": "Elegant Loop Earrings",
+    "review": 4.3,
+    "karat": "22K",
+    "gold_weight": "8 grams",
+    "category": "earrings",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwca184e4d/images/hi-res/51D5P1DNGABA00_1.jpg?sw=640&sh=640",
+    "price": 37000,
+    "description": "The Elegant Loop Earrings combine simplicity and sophistication in 22K hallmarked gold. Weighing a light 8 grams, each earring features a continuous circular loop with a gently hammered surface that creates subtle reflections. The fluid design gives a sense of movement and modernity, perfect for both daytime outings and evening events. The earrings secure with discreet lever-back closures, ensuring comfort and stability. Their versatile style complements everything from casual denim and a white tee to formal dresses and business attire. Packaged in a sleek black jewelry pouch with a drawstring closure, the Elegant Loop Earrings make an ideal gift for birthdays, anniversaries, or holidays. Embrace minimalist chic and let these earrings become a go-to staple in your everyday collection."
+  },
+  {
+    "id": 11,
+    "title": "Twist Design Gold Ring",
+    "review": 4.1,
+    "karat": "18K",
+    "gold_weight": "5 grams",
+    "category": "rings",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw31149a4c/images/hi-res/51D5B1FZEAACZ_2.jpg?sw=640&sh=640",
+    "price": 18000,
+    "description": "Add a contemporary twist to your jewelry collection with the Twist Design Gold Ring, crafted from 18K hallmarked gold and weighing a slender 5 grams. The band features a gently interwoven design that mimics a subtle spiral, creating a dynamic interplay of light and shadow. Its slim profile and open-ended construction allow for slight adjustability, ensuring a comfortable fit across different finger sizes. The high-polish finish accentuates the ring’s fluid form, making it a standout piece whether worn solo or paired with other stackable rings. Ideal for daily wear, its minimalist aesthetic complements casual, office, and evening looks equally well. Packaged in a modern geometric-patterned jewelry box, the Twist Design Gold Ring is perfect as a thoughtful gift for engagements, anniversaries, or personal indulgences. Embrace innovation in goldsmithing with this elegantly twisted ring."
+  },
+  {
+    "id": 12,
+    "title": "Antique Filigree Bangles",
+    "review": 4.9,
+    "karat": "22K",
+    "gold_weight": "34 grams",
+    "category": "bangles",
+    "imglink": "https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwe3f9a9da/images/hi-res/51D5P1BFAAA00_1.jpg?sw=640&sh=640",
+    "price": 42500,
+    "description": "The Antique Filigree Bangles channel the allure of vintage craftsmanship with their ornate openwork design. Forged from 22K hallmarked gold and weighing 34 grams, each bangle is hand-carved with elaborate scrolls, vines, and bead accents that evoke the elegance of bygone eras. The filigree technique allows light to pass through the delicate patterns, creating a captivating interplay of shadows and highlights. Despite their intricate appearance, these bangles maintain a comfortable fit thanks to a slightly oval interior profile that follows the natural contour of the wrist. Perfect for weddings, cultural celebrations, or adding a heritage touch to modern outfits, they pair exquisitely with heavy silk sarees and lehengas. Presented in a regal velvet-lined wooden box, the Antique Filigree Bangles make an exceptional gift for brides or collectors of fine jewelry. Embrace timeless elegance and let these heirloom-quality pieces grace your ensemble."
+  }
+]

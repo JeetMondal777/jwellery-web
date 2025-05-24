@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+
+/* Add smooth font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Optional: Add rotate animation for container */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.carousel-container {
+  animation: rotate 20s linear infinite;
+}
+
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* index.css */
+
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* utility class to hook on the wrapper */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 4s ease infinite;
+}
+
+
+@layer components {
+  .expanding-underline {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .expanding-underline::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    height: 2px;
+    width: 100%;
+    background-color: #f43f5e;        /* Tailwind’s rose-600 */
+    transform-origin: center;
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .expanding-underline:hover::before {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+@layer components {
+  .expanding-underline-gold {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .expanding-underline-gold::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    height: 2px;
+    width: 100%;
+    background-color: #B07F36;        /* Tailwind’s rose-600 */
+    transform-origin: center;
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .expanding-underline-gold:hover::before {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+
+
+/* Hide default browser password toggle */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-clear-button {
+  display: none;
+}
+
