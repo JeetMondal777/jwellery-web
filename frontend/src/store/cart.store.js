@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import axios from 'axios'
+import toast from 'react-hot-toast'
 
 const API = import.meta.env.VITE_API_URL
 
@@ -18,7 +19,7 @@ const useCartStore = create(
           set({ cartItems: res.data })
         } catch (err) {
           console.error('Failed to load cart', err)
-          alert('Could not load cart')
+          toast.error('Could not load cart')
         }
       },
 
@@ -34,9 +35,10 @@ const useCartStore = create(
             },
             { headers: { Authorization: `Bearer ${token}` } }
           )
+          toast.success(`${item.title} added to cart!`)
         } catch (err) {
           console.error('Add to cart failed', err)
-          alert('Could not add item to cart')
+          toast.error('Could not add item to cart')
         } finally {
           get().fetchCart()
         }
@@ -48,9 +50,10 @@ const useCartStore = create(
           await axios.delete(`${API}/api/users/cart/${id}`, {
             headers: { Authorization: `Bearer ${token}` }
           })
+          toast.success('Item removed from cart')
         } catch (err) {
           console.error('Remove failed', err)
-          alert('Could not remove item from cart')
+          toast.error('Could not remove item from cart')
         } finally {
           get().fetchCart()
         }
@@ -85,11 +88,11 @@ const useCartStore = create(
             headers
           )
 
-          alert(`Order placed for "${product.title}"!`)
+          toast.success(`Order placed for "${product.title}"!`)
         } catch (err) {
           console.error('Order failed:', err.response ?? err)
           const serverMsg = err.response?.data?.message
-          alert(serverMsg || 'Something went wrong. Please try again.')
+          toast.error(serverMsg || 'Something went wrong. Please try again.')
         } finally {
           // 3) refresh cart
           get().fetchCart()

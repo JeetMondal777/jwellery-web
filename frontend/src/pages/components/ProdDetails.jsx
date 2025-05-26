@@ -4,6 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { motion, AnimatePresence } from 'framer-motion';
 import necklace from '../../assets/images/NecklaceMain.png';
 import useCartStore from '../../store/cart.store';
+import toast from 'react-hot-toast';
 
 export default function ProdDetails({
   imageSrc,

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -34,10 +35,10 @@ const Orders = () => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setOrders((prev) => prev.filter(o => o._id !== orderId));
-      alert('Order cancelled.');
+      toast.success('Order cancelled.');
     } catch (err) {
       console.error(err);
-      alert('Could not cancel order. Please try again.');
+      toast.error('Could not cancel order. Please try again.');
     }
   };
 

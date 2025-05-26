@@ -11,6 +11,7 @@ import useWishlistStore from '../store/wishlist.store'
 import useCartStore from '../store/cart.store'
 import { useEffect } from 'react'
 import axios from 'axios'
+import toast from 'react-hot-toast'
 
 const Home = () => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const Home = () => {
         setWishlist(res.data);
       } catch (err) {
         console.error('Failed to load wishlist', err);
-        alert('Could not load wishlist');
+        toast.error('Error Occured! Log In Again');
       }
     };
 

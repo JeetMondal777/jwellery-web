@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import useCartStore from '../../store/cart.store';
+import toast from 'react-hot-toast';
 
 const DeliveryOverview = ({ product, details, onBack, onClose }) => {
 
-  const orderItem = useCartStore((state) => state.orderItem);
+  const fetchCart = useCartStore((state) => state.fetchCart);
 
   // Compute expected date (7 days from today)
   const today = new Date();
@@ -35,12 +36,13 @@ const DeliveryOverview = ({ product, details, onBack, onClose }) => {
         `${import.meta.env.VITE_API_URL}/api/users/cart/${product._id}`,
         headers
       );
-
-      alert(`Order placed for "${product.title}"!`);
+      toast.success(`Successfully placed order for ${product.title} !`);
       onClose();
     } catch (err) {
       console.error(err);
-      alert('Something went wrong. Please try again.');
+      toast.error('Something went wrong. Please try again.');
+    }finally {
+      fetchCart(); // Refresh cart after placing order
     }
   };
 
