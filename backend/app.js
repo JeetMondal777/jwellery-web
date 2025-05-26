@@ -10,9 +10,12 @@ const userRoutes = require('./routes/user.routes');
 const app = express();
 const cors = require('cors');
 
+app.disable("x-powered-by");
+
+
 app.use(cookieParser());
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: process.env.CLIENT_URL || "*",
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],}));
