@@ -202,24 +202,44 @@ const Navbar = () => {
         </div>
         {/* Desktop Icons */}
         <div className="hidden md:flex items-center space-x-4">
-          <CiUser
-            onClick={() => setShowProfile(true)}
-            className="text-2xl hover:scale-110 transition duration-200 cursor-pointer text-[#B07F36]"
-          />
-          <CiHeart
-            onClick={() => {
-              if (!token) setShowWishlistPanel(true);
-              navigate("/wish");
-            }}
-            className="text-2xl hover:scale-110 transition duration-200 cursor-pointer text-[#B07F36]"
-          />
-          <BsHandbag
-            onClick={() => {
-              if (!token) setShowCartPanel(true);
-              navigate("/cart");
-            }}
-            className="text-2xl hover:scale-110 transition duration-200 cursor-pointer text-[#B07F36]"
-          />
+<div className="flex space-x-4">
+  <button
+    onClick={() => setShowProfile(true)}
+    className="relative expanding-underline-gold"
+    aria-label="profile"
+  >
+    <CiUser
+      className="text-2xl hover:scale-110 transition duration-200 cursor-pointer text-[#B07F36]"
+    />
+  </button>
+
+  <button
+    onClick={() => {
+      if (!token) setShowWishlistPanel(true);
+      navigate("/wish");
+    }}
+    className="relative expanding-underline-gold"
+    aria-label="wishlist"
+  >
+    <CiHeart
+      className="text-2xl hover:scale-110 transition duration-200 cursor-pointer text-[#B07F36]"
+    />
+  </button>
+
+  <button
+    onClick={() => {
+      if (!token) setShowCartPanel(true);
+      navigate("/cart");
+    }}
+    className="relative expanding-underline-gold"
+    aria-label="cart"
+  >
+    <BsHandbag
+      className="text-2xl hover:scale-110 transition duration-200 cursor-pointer text-[#B07F36]"
+    />
+  </button>
+</div>
+
         </div>
       </nav>
 

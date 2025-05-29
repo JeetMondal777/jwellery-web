@@ -100,7 +100,7 @@ body {
   .expanding-underline-gold::before {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -3px;
     left: 50%;
     height: 2px;
     width: 100%;
