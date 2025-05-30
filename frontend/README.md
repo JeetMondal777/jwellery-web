@@ -70,7 +70,7 @@ This will create a production build in the `dist` folder.
 ## Project Structure
 The project structure is as follows:
 ```
-elegant-jewels-frontend/
+jewels-frontend/
 ├── public/
 │   ├── favicon.ico
 │   ├── index.html
