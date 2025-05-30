@@ -35,26 +35,4 @@ Welcome to **Jewels**, a premium-looking jewelry e-commerce platform built with 
    git clone https://github.com/your-username/elegant-jewels.git
    cd jwellery-web
 
-# Frontend
-```bash
-cd frontend
-npm install
 
-# Backend
-```bash
-cd ../backend
-npm install
-
-# Backend Environment Variables 
-```bash
-# In one terminal
-cd backend && npm run dev
-MONGODB_URI=your_mongo_connection_string
-JWT_SECRET=your_jwt_secret
-PORT = your_port
-
-# In one terminal
-cd backend && npm run dev
-
-# In another terminal
-cd frontend && npm run dev
