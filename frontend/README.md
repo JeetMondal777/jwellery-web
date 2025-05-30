@@ -1,12 +1,35 @@
-# React + Vite
+# Frontend README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The frontend of **Jewels** is crafted with modern React, leveraging:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Font - Libre Baskerville** - used for making engaging and premium UI.
+- **Zustand** for lightweight, scalable state management.
+- **Tailwind CSS** for utility-first styling and responsive design.
+- **GSAP (GreenSock Animation Platform)** for complex, performant animations.
+- **Framer Motion** for declarative, interactive UI transitions.
+- **React Hot Toast** for global toast notifications.
+- **React Icons** for the icons used in the UI (e.g- wishlist, cart icon etc.).
 
-## Expanding the ESLint configuration
+## Table of Contents
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Development Server](#development-server)
+- [Production Build](#production-build)
+- [Project Structure](#project-structure)
+- [Additional Notes](#additional-notes)
+
+## Prerequisites
+
+- Node.js v16+ and npm v8++
+- Yarn (optional)
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/elegant-jewels-frontend.git
+   cd elegant-jewels-frontend
