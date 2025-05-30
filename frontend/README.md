@@ -87,3 +87,36 @@ elegant-jewels-frontend/
 └── README.md
 ```
 
+## Routing & Notifications
+
+Routing handled by react-router-dom in App.jsx. Key routes:
+
+- / → Home
+
+- /login → Login
+
+- /registration → Registration
+
+- /products → ProductPage
+
+- /prod → ProdDetails
+
+- /profile → ProfilePanel
+
+- /cart → CartPage
+
+- /wish → WishlistPage
+
+- /order → OrderPage
+
+Global toast notifications are configured using react-hot-toast centered at the top of the screen.
+
+Additional Notes
+
+Styling: Tailwind CSS with custom theming.
+
+State Management: React Context is available; consider migrating to Redux for complex scenarios.
+
+Testing: Jest and React Testing Library setup is available in /tests.
+
+Feel free to extend routes by updating App.jsx and adding new page components.
