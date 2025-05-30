@@ -20,7 +20,6 @@ The frontend of **Jewels** is crafted with modern React, leveraging:
 - [Development Server](#development-server)
 - [Production Build](#production-build)
 - [Project Structure](#project-structure)
-- [Additional Notes](#additional-notes)
 
 ## Prerequisites
 
