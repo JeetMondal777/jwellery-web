@@ -20,6 +20,9 @@ The frontend of **Jewels** is crafted with modern React, leveraging:
 - [Development Server](#development-server)
 - [Production Build](#production-build)
 - [Project Structure](#project-structure)
+- [Routing & Notifications](#routing-notifications)
+- [Additional Notes](#additional-notes)
+
 
 ## Prerequisites
 
@@ -111,7 +114,7 @@ Routing handled by react-router-dom in App.jsx. Key routes:
 
 Global toast notifications are configured using react-hot-toast centered at the top of the screen.
 
-Additional Notes
+## Additional Notes
 
 Styling: Tailwind CSS with custom theming.
 
