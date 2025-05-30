@@ -93,6 +93,7 @@ elegant-jewels-frontend/
 ## Routing & Notifications
 
 Routing handled by react-router-dom in App.jsx. Key routes:
+```bash
 
 - / → Home
 
@@ -111,6 +112,7 @@ Routing handled by react-router-dom in App.jsx. Key routes:
 - /wish → WishlistPage
 
 - /order → OrderPage
+```
 
 Global toast notifications are configured using react-hot-toast centered at the top of the screen.
 
