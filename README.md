@@ -1,6 +1,8 @@
 ## Project Overview
 
 Welcome to **Jewels**, a premium-looking jewelry e-commerce platform built with the MERN stack and Next.js. This project showcases a storytelling homepage, a comprehensive product catalog, individual product detail pages, shopping cart functionality, and seamless checkout flow.
+- [Jewels live link](https://jewels-ebon.vercel.app) check it out now
+
 
 ## What You Can Do Here
 
