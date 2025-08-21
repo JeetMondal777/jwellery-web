@@ -37,9 +37,9 @@ const Footer = () => (
         {/* Contact Us / Chat With Us */}
         <div>
           <h3 className="mb-2 text-xl font-semibold text-rose-500">Contact Us</h3>
-          <p className="mb-6">+91 7866865971</p>
+          <p className="mb-6">+91 12345678901</p>
           <h3 className="mb-2 text-xl font-semibold text-rose-500">Chat With Us</h3>
-          <p className="mb-2">cs2349diatm@gmail.com</p>
+          <p className="mb-2">x@y.com</p>
           <div className="border-t border-rose-200 my-4" />
           <div className="flex space-x-4 text-2xl">
             {/* Replace with actual chat icons if desired */}
