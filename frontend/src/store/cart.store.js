@@ -13,6 +13,7 @@ const useCartStore = create(
       fetchCart: async () => {
         try {
           const token = localStorage.getItem('token')
+          if (!token) return;
           const res = await axios.get(`${API}/api/users/cart`, {
             headers: { Authorization: `Bearer ${token}` }
           })

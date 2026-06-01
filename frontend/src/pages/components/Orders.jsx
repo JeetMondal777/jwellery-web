@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Package, Calendar, XCircle } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
@@ -42,16 +43,65 @@ const Orders = () => {
     }
   };
 
-  if (loading) return <p className="text-center mt-8">Loading orders…</p>;
-  if (error)   return <p className="text-center mt-8 text-red-600">{error}</p>;
-  if (orders.length === 0) return <p className="text-center pt-24">No orders found.</p>;
+  if (loading) {
+    return (
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+        <div className="text-center mb-12">
+          <div className="h-10 w-48 shimmer-gold rounded-lg mx-auto" />
+          <div className="divider-gold w-20 mx-auto mt-4" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="bg-white rounded-xl border border-[#F0DFC8] p-5 space-y-4">
+              <div className="h-24 shimmer-gold rounded-lg" />
+              <div className="h-4 w-3/4 shimmer-gold rounded" />
+              <div className="h-4 w-1/2 shimmer-gold rounded" />
+              <div className="h-10 w-28 shimmer-gold rounded-lg" />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 text-center">
+        <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+          <XCircle className="w-8 h-8 text-[#7F1D1D]" />
+        </div>
+        <p className="text-[#7F1D1D]">{error}</p>
+      </div>
+    );
+  }
+
+  if (orders.length === 0) {
+    return (
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+        <h1 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-center text-[#1A1410] mb-4">
+          My <span className="text-[#C9954A]">Orders</span>
+        </h1>
+        <div className="divider-gold w-20 mx-auto mt-4 mb-16" />
+        <div className="flex flex-col items-center justify-center py-16">
+          <div className="w-20 h-20 rounded-full bg-[#F0DFC8] flex items-center justify-center mb-6">
+            <Package className="w-10 h-10 text-[#C9954A]" />
+          </div>
+          <p className="font-['Playfair_Display'] text-2xl text-[#4A3F3A] mb-2">No orders yet</p>
+          <p className="text-[#6B5E54] text-sm mb-8">Your order history will appear here.</p>
+          <a href="/products" className="btn-outline text-sm">Start Shopping</a>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="max-w-7xl pt-28 mx-auto ">
-      <h1 className="text-2xl font-bold text-center mb-8">My <span className='text-rose-700 '>Orders</span></h1>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+      <h1 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-center text-[#1A1410] mb-4">
+        My <span className="text-[#C9954A]">Orders</span>
+      </h1>
+      <div className="divider-gold w-20 mx-auto mt-4 mb-12" />
 
-      {/* Responsive grid: 1 col on mobile, 2 on md, 3 on lg */}
-      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {orders.map((order) => {
           const placedAt = new Date(order.createdAt || Date.now());
           const expected = new Date(placedAt);
@@ -62,43 +112,51 @@ const Orders = () => {
           const d = order.deliveryDetails || {};
 
           return (
-            <div key={order._id} className="bg-white rounded-xl shadow-xl p-4 flex flex-col">
-              {/* Product Info */}
-              <div className="flex border-b pb-4">
-                <div className="w-1/3">
-                  <img
-                    src={order.imgLink || order.imglink}
-                    alt={order.title}
-                    className="object-cover w-full h-24 rounded"
-                  />
+            <div
+              key={order._id}
+              className="bg-white rounded-xl shadow-sm border border-[#F0DFC8] overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="p-5">
+                <div className="flex items-center gap-4 border-b border-[#F0DFC8] pb-4">
+                  <div className="w-16 h-16 flex-shrink-0 rounded-lg border border-[#F0DFC8] overflow-hidden bg-[#FDF6EF]">
+                    <img
+                      src={order.imgLink || order.imglink}
+                      alt={order.title}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-['Playfair_Display'] font-semibold text-base text-[#1A1410] truncate">
+                      {order.title}
+                    </h3>
+                    <p className="text-[#C9954A] font-bold mt-1">₹{order.price}</p>
+                  </div>
                 </div>
-                <div className="w-2/3 pl-4 flex flex-col justify-center">
-                  <h3 className="text-lg font-semibold">{order.title}</h3>
-                  <p className="mt-2 text-rose-600 font-bold">₹{order.price}</p>
+
+                <div className="mt-4 space-y-2.5">
+                  <p className="text-[10px] uppercase tracking-[0.15em] text-[#6B5E54] font-medium">Delivery Details</p>
+                  <p className="text-sm text-[#1A1410]">
+                    <span className="text-[#6B5E54]">To: </span>
+                    {d.name}
+                  </p>
+                  <p className="text-sm text-[#4A3F3A] leading-snug">
+                    {d.location}
+                    {d.landmark ? `, ${d.landmark}` : ''}, {d.state} - {d.pincode}
+                  </p>
+                  <div className="flex items-center gap-2 pt-1">
+                    <span className="bg-[#F0DFC8] text-[#A67C35] text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">COD</span>
+                    <div className="flex items-center gap-1.5 text-[#6B5E54] text-xs">
+                      <Calendar className="w-3.5 h-3.5 text-[#C9954A]" />
+                      <span>Expected: <span className="text-[#C9954A] font-semibold">{expectedDateStr}</span></span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Delivery Details */}
-              <div className="p-4 space-y-2 flex-grow">
-                <h4 className="text-xl font-medium">Delivery Details</h4>
-                <p className="text-sm"><strong>Name:</strong> {d.name}</p>
-                <p className="text-sm"><strong>Phone:</strong> {d.number}</p>
-                <p className="text-sm">
-                  <strong>Address:</strong> {d.location}
-                  {d.landmark ? `, ${d.landmark}` : ''}, {d.state} – {d.pincode}
-                </p>
-                <p className="text-sm"><strong>Delivery type:</strong> COD</p>
-                <p className="text-sm">
-                  <strong>Expected date:</strong>{' '}
-                  <span className="text-rose-700">{expectedDateStr}</span>
-                </p>
-              </div>
-
-              {/* Cancel Button */}
-              <div className="flex justify-end pt-2 border-t">
+              <div className="border-t border-[#F0DFC8] px-5 py-3 flex justify-end">
                 <button
                   onClick={() => handleCancel(order._id)}
-                  className="px-4 py-2 bg-gradient-to-br from-red-700 to-rose-600 via-rose-400 text-white rounded hover:scale-103 hover:rounded-xl cursor-pointer transition-all duration-300"
+                  className="btn-danger text-xs"
                 >
                   Cancel Order
                 </button>

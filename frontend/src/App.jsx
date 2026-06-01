@@ -12,19 +12,15 @@ import ProfilePanel from './pages/components/ProfilePanel';
 import WishlistPage from './pages/WishlistPage';
 import CartPage from './pages/CartPage';
 import OrderPage from './pages/OrderPage';
+import AboutPage from './pages/AboutPage';
 
 const App = ({ children }) => {
   return (
     <>
-      {/* Global Toast Notifications Centered */}
+      {/* Global Toast Notifications at Bottom Right */}
       <Toaster
-        position="top-center"
+        position="bottom-right"
         reverseOrder={false}
-        toastOptions={{
-          style: {
-            margin: 'auto',
-          },
-        }}
       />
 
       <Routes>
@@ -38,6 +34,7 @@ const App = ({ children }) => {
         <Route path='/cart' element={<CartPage />} />
         <Route path='/wish' element={<WishlistPage />} />
         <Route path='/order' element={<OrderPage />} />
+        <Route path='/about' element={<AboutPage />} />
       </Routes>
 
       {children}

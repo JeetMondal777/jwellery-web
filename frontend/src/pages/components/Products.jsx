@@ -1,6 +1,6 @@
-// src/components/ProductsGrid.jsx
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Heart, Star } from 'lucide-react';
 import axios from 'axios';
 import ProdDetails from './ProdDetails';
 import jewellery from '../../assets/jwellery.json';
@@ -16,13 +16,10 @@ export default function ProductsGrid() {
   const searchTerm  = query.get('search')?.toLowerCase()   || '';
   const categoryTerm= query.get('category')?.toLowerCase() || '';
 
-  // Zustand store
   const wishlist         = useWishlistStore((s) => s.wishlist);
   const addToWishlist    = useWishlistStore((s) => s.addToWishlist);
   const removeFromWishlist = useWishlistStore((s) => s.removeFromWishlist);
-  
 
-  // Helper to check if a product is wishlisted (by title)
   const isWishlisted = (title) =>
     wishlist.some((item) => item.title === title);
 
@@ -40,17 +37,13 @@ export default function ProductsGrid() {
 
     try {
       if (isWishlisted(product.title)) {
-        // Find the actual wishlist item in store to get its _id
         const existing = wishlist.find((i) => i.title === product.title);
-        // Call DELETE on your backend
         await axios.delete(
           `${import.meta.env.VITE_API_URL}/api/users/wishlist/${existing._id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
-        // Remove from Zustand
         removeFromWishlist(existing._id);
       } else {
-        // Call POST on your backend
         const res = await axios.post(
           `${import.meta.env.VITE_API_URL}/api/users/wishlist`,
           {
@@ -60,7 +53,6 @@ export default function ProductsGrid() {
           },
           { headers: { Authorization: `Bearer ${token}` } }
         );
-        // Add the returned item (with its _id) into Zustand
         addToWishlist(res.data);
       }
     } catch (err) {
@@ -69,73 +61,109 @@ export default function ProductsGrid() {
     }
   };
 
+  const renderStars = (rating) => {
+    const full = Math.floor(rating);
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <Star
+          key={i}
+          className={`w-3.5 h-3.5 ${i < full ? 'text-[#C9954A] fill-[#C9954A]' : 'text-[#E8D5C0]'}`}
+        />
+      );
+    }
+    return stars;
+  };
+
   return (
-<div
-  className="max-w-7xl mx-auto px-4 mt-36 pt-20 py-8"
-  style={pathname === "/" ? { marginTop: '0px' } : {}}
->
-        <h1 className="text-4xl mb-7 font-semibold text-center">
-        {pathname === '/'
-          ? <>Our <span className="text-rose-700 ">Most</span> Selling Jewelleries</>
-          : <>All <span className="text-rose-700">Jewelleries</span></>}
-      </h1>
+    <div
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-36 pt-20 pb-16"
+      style={pathname === "/" ? { marginTop: '0px' } : {}}
+    >
+      <div className="text-center mb-16">
+        <h2 className="font-display-lg text-5xl md:text-7xl text-on-surface leading-none">
+          {pathname === '/' ? (
+            <>
+              Our <span className="text-primary font-bold">Most</span> Selling Jewelleries
+            </>
+          ) : (
+            <>
+              All <span className="text-primary font-bold">Jewelleries</span>
+            </>
+          )}
+        </h2>
+        <div className="divider-gold w-24 mx-auto mt-6" />
+      </div>
 
       {filtered.length === 0 ? (
-        <p className="text-center text-gray-500">
-          {categoryTerm
-            ? `No products in “${categoryTerm}”.`
-            : 'No products match your search.'}
-        </p>
+        <div className="text-center py-20">
+          <p className="text-[#4A3F3A] text-lg">
+            {categoryTerm
+              ? `No products in "${categoryTerm}" collection.`
+              : 'No products match your search.'}
+          </p>
+        </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {filtered.map((product) => (
             <div
               key={product.id}
-              className="group cursor-pointer"
+              className="group cursor-pointer bg-[#FFFBFA] rounded-[1.75rem] border border-[#F0DFC8] p-3 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-out flex flex-col justify-between"
               onClick={() => setSelectedProduct(product)}
             >
-              <div className="relative overflow-hidden rounded-2xl shadow-md">
-                <img
-                  src={product.imglink}
-                  alt={product.title}
-                  className="w-full rounded-3xl object-center p-5 h-64 object-cover group-hover:scale-105 transition-transform duration-200"
-                />
-
-                <button
-                  onClick={(e) => handleWishlistClick(e, product)}
-                  className={`absolute top-2 right-2 cursor-pointer p-2 rounded-full ${
-                    isWishlisted(product.title)
-                      ? 'bg-yellow-400 text-white'
-                      : 'bg-white text-gray-400 hover:bg-gray-100'
-                  }`}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill={isWishlisted(product.title) ? 'white' : 'none'}
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-5 h-5"
+              <div>
+                <div className="relative overflow-hidden bg-[#FDF6EF] rounded-2xl">
+                  <img
+                    src={product.imglink}
+                    alt={product.title}
+                    className="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-700 ease-out rounded-2xl"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#FFFBFA]/90 backdrop-blur-sm text-[#A67C35] text-[10px] uppercase tracking-[0.12em] px-3 py-1.5 rounded-full font-bold shadow-sm border border-[#F0DFC8]/50">
+                    {product.category}
+                  </span>
+                  <button
+                    onClick={(e) => handleWishlistClick(e, product)}
+                    className={`absolute top-3 right-3 p-2.5 rounded-full transition-all duration-300 cursor-pointer shadow-sm ${
+                      isWishlisted(product.title)
+                        ? 'bg-[#C9954A] text-white shadow-md'
+                        : 'bg-[#FFFBFA]/90 backdrop-blur-sm text-[#4A3F3A] hover:bg-white hover:scale-110'
+                    }`}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4.318 6.318a4.5 4.5 
-                         0 016.364 0L12 7.636l1.318-1.318a4.5 
-                         4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 
-                         4.5 0 010-6.364z"
+                    <Heart
+                      className={`w-4 h-4 transition-all duration-300 ${
+                        isWishlisted(product.title) ? 'fill-white scale-110' : ''
+                      }`}
                     />
-                  </svg>
-                </button>
+                  </button>
+                </div>
+
+                <div className="px-2 pt-4">
+                  <span className="text-[10px] font-bold tracking-widest text-[#A67C35] uppercase block mb-1">
+                    Premium Collection
+                  </span>
+                  <h3 className="font-['Playfair_Display'] font-semibold text-base md:text-lg text-[#1A1410] tracking-wide leading-tight line-clamp-1">
+                    {product.title}
+                  </h3>
+                  <div className="flex items-center gap-1 mt-1.5">
+                    {renderStars(product.review)}
+                    <span className="text-[11px] text-[#6B5E54] ml-1">({product.review})</span>
+                  </div>
+                  <p className="mt-3 text-lg md:text-xl font-bold text-[#C9954A]">
+                    ₹ {product.price.toLocaleString()}
+                  </p>
+                </div>
               </div>
 
-              <div className="mt-4 text-center">
-                <h3 className="text-lg font-medium text-gray-900">
-                  {product.title}
-                </h3>
-                <p className="mt-1 text-xl font-bold text-gray-800">
-                  ₹ {product.price.toLocaleString()}
-                </p>
+              <div className="px-2 pb-1 mt-5">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedProduct(product);
+                  }}
+                  className="w-full py-3 bg-primary/70 hover:bg-[#C9954A] text-white font-medium text-xs tracking-widest uppercase rounded-full shadow transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                >
+                  View Details
+                </button>
               </div>
             </div>
           ))}
@@ -148,12 +176,11 @@ export default function ProductsGrid() {
           title={selectedProduct.title}
           price={selectedProduct.price}
           reviews={selectedProduct.review}
-          reviewCount={selectedProduct.reviewCount ?? 0}
+          karat={selectedProduct.karat}
+          goldWeight={selectedProduct.gold_weight}
           description={selectedProduct.description}
           onAddToWishlist={(e) => handleWishlistClick(e, selectedProduct)}
-          onAddToCart={() =>
-            alert(`Added ${selectedProduct.title} to cart!`)
-          }
+          onAddToCart={() => {}}
           onClose={() => setSelectedProduct(null)}
         />
       )}

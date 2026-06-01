@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 
 const ProductPage = () => {
   return (
-    <div className='bg-rose-50 mt-[-4rem]'>
+    <div className='mt-[-4rem]'>
         <Nav/>
         <Products/>
         <Footer/>

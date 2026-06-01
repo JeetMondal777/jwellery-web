@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { X } from 'lucide-react';
 import DeliveryOverview from './DeliveryOverview';
 
 const states = [
@@ -13,12 +14,10 @@ const DeliveryModal = ({ product, onClose }) => {
     landmark: '', state: '', pincode: ''
   });
 
-  // For custom suggestions
   const [filtered, setFiltered] = useState([]);
   const [showSug, setShowSug] = useState(false);
   const wrapperRef = useRef(null);
 
-  // Close suggestions when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
@@ -62,23 +61,35 @@ const DeliveryModal = ({ product, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/80 z-50 flex justify-center items-center">
-      <div className="bg-white p-6 rounded-xl shadow-xl w-[90%] max-w-md animate-fade-in-up">
-
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex justify-center items-center p-4">
+      <div className="bg-[#FFFBFA] rounded-2xl shadow-2xl border border-[#F0DFC8] w-full max-w-lg animate-fade-in-up overflow-hidden">
         {step === 'form' ? (
-          <>
-            <h2 className="text-2xl font-bold text-rose-700 mb-4 text-center">
-              Delivery Details
-            </h2>
-            <form onSubmit={handleContinue} className="space-y-4">
+          <div className="p-6 sm:p-8">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="font-['Playfair_Display'] text-2xl text-[#C9954A]">Delivery Details</h2>
+              <button
+                onClick={onClose}
+                className="p-2 rounded-full text-[#4A3F3A]/60 hover:text-[#4A3F3A] hover:bg-[#F0DFC8]/50 transition-all cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
 
-              {/* ... other inputs ... */}
-                            <input
+            {/* Step indicator */}
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <div className="w-3 h-3 rounded-full bg-[#C9954A]" />
+              <div className="w-16 h-px bg-[#C9954A]" />
+              <div className="w-3 h-3 rounded-full bg-[#E8D5C0]" />
+              <span className="text-[11px] text-[#6B5E54] ml-2 uppercase tracking-wider">Review</span>
+            </div>
+
+            <form onSubmit={handleContinue} className="space-y-4">
+              <input
                 name="name"
                 placeholder="Full Name"
                 value={form.name}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded"
+                className="input-gold"
                 required
               />
 
@@ -87,7 +98,7 @@ const DeliveryModal = ({ product, onClose }) => {
                 placeholder="Phone Number"
                 value={form.number}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded"
+                className="input-gold"
                 required
               />
 
@@ -96,7 +107,7 @@ const DeliveryModal = ({ product, onClose }) => {
                 placeholder="Address / Location"
                 value={form.location}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded"
+                className="input-gold"
                 required
               />
 
@@ -105,10 +116,9 @@ const DeliveryModal = ({ product, onClose }) => {
                 placeholder="Nearby Landmark (optional)"
                 value={form.landmark}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded"
+                className="input-gold"
               />
 
-              {/* State input with custom dropdown */}
               <div className="relative" ref={wrapperRef}>
                 <input
                   name="state"
@@ -116,13 +126,13 @@ const DeliveryModal = ({ product, onClose }) => {
                   value={form.state}
                   onChange={handleChange}
                   onFocus={() => setShowSug(filtered.length > 0)}
-                  className="w-full px-4 py-2 border rounded"
+                  className="input-gold"
                   required
                 />
                 <ul
                   className={`
                     absolute top-full left-0 right-0 mt-1 max-h-40 overflow-auto
-                    bg-white text-black border border-gray-300 rounded shadow-lg
+                    bg-white border border-[#E8D5C0] rounded-lg shadow-lg z-10
                     transition-opacity duration-200 ease-in-out
                     ${showSug ? 'opacity-100' : 'opacity-0 pointer-events-none'}
                   `}
@@ -131,7 +141,7 @@ const DeliveryModal = ({ product, onClose }) => {
                     <li
                       key={s}
                       onClick={() => selectState(s)}
-                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      className="px-4 py-2.5 text-sm text-[#4A3F3A] hover:bg-[#FDF6EF] hover:text-[#C9954A] cursor-pointer transition-colors"
                     >
                       {s}
                     </li>
@@ -144,29 +154,27 @@ const DeliveryModal = ({ product, onClose }) => {
                 placeholder="6-digit Pincode"
                 value={form.pincode}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded"
+                className="input-gold"
                 required
               />
 
-              <div className="flex justify-between mt-6">
+              <div className="flex justify-between gap-3 pt-4">
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-4 py-2 border border-gray-400 rounded hover:bg-gray-200"
+                  className="btn-outline flex-1 text-sm"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-white rounded
-                             bg-gradient-to-br from-rose-400 via-rose-700 to-rose-400
-                             hover:scale-105 transition"
+                  className="btn-gold flex-1 text-sm"
                 >
                   Continue
                 </button>
               </div>
             </form>
-          </>
+          </div>
         ) : (
           <DeliveryOverview
             product={product}

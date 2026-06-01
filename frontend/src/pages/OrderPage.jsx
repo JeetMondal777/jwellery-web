@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 
 const OrderPage = () => {
   return (
-    <div className='bg-rose-50'>
+    <div>
         <Navbar/>
         <Orders/>
         <Footer/>

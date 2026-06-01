@@ -2,11 +2,12 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import { FloatingDockDemo } from './components/FloatingDock'
+import NewYear from './components/NewYear'
 import World from './components/World'
-import Service from './components/Service'
-import Footer from './components/Footer'
 import Products from './components/Products'
+import Service from './components/Service'
+import Faq from './components/Faq'
+import Footer from './components/Footer'
 import useWishlistStore from '../store/wishlist.store'
 import useCartStore from '../store/cart.store'
 import { useEffect } from 'react'
@@ -26,6 +27,7 @@ const Home = () => {
     const fetchWishlist = async () => {
       try {
         const token = localStorage.getItem('token');
+        if (!token) return;
         const res = await axios.get(
           `${import.meta.env.VITE_API_URL}/api/users/wishlist`,
           { headers: { Authorization: `Bearer ${token}` } }
@@ -40,31 +42,32 @@ const Home = () => {
     fetchWishlist();
   }, [wishlist]);
 
-    const fetchCart = useCartStore(state => state.fetchCart)
-    const cartItems      = useCartStore(state => state.cartItems)
-    
+  const fetchCart = useCartStore(state => state.fetchCart)
 
   useEffect(() => {
     fetchCart()
   }, [fetchCart])
 
   return (
-    <div className="justify-center items-center flex flex-col">
+    <div className="justify-center items-center flex flex-col w-full bg-surface">
       <Nav />
       <Hero />
-      <FloatingDockDemo />
+      <NewYear />
       <World />
+      {/* <Products />
+      <div className="w-full text-center pb-12 bg-surface">
+        <button
+          onClick={() => {
+            navigate('/products');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="px-10 py-3.5 bg-on-surface hover:bg-primary text-surface font-label-caps text-label-caps tracking-widest uppercase rounded-lg shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+        >
+          Explore More
+        </button>
+      </div> */}
       <Service />
-      <Products />
-      <button
-        onClick={() => {
-          navigate('/products');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        className="px-10 animate-gradient cursor-pointer py-3 hover:scale-105 transition-all duration-300 text-xl font-semibold rounded-xl bg-gradient-to-r text-white from-pink-400 to-yellow-600 "
-      >
-        Explore More
-      </button>
+      <Faq />
       <Footer />
     </div>
   );
