@@ -31,7 +31,7 @@ const World = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-12 w-full flex justify-between items-end">
-            <h3 className="font-display-lg text-display-lg text-surface">Wedding</h3>
+            <h3 className="font-display-lg text-display-lg hidden sm:block text-surface">Wedding</h3>
             <span className="glass-panel w-16 h-16 rounded-full flex items-center justify-center border border-surface/30 hover:bg-surface hover:text-on-surface transition-colors duration-300">
               <span className="material-symbols-outlined">east</span>
             </span>
