@@ -15,7 +15,6 @@ const RegistrationForm = ({ onSwitchToLogin }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     // Show loading only if not already registered/logged in
     const existingToken = localStorage.getItem("token");
     let loadingId;
